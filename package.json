@@ -1,0 +1,25 @@
+{
+  "name": "slack-bot",
+  "version": "0.0.0",
+  "description": "Slack Bot을 만들어보자",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --delay 1 app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yenarue/slack-bot.git"
+  },
+  "author": "김예나 (Yena Kim, Yenarue)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yenarue/slack-bot/issues"
+  },
+  "homepage": "https://github.com/yenarue/slack-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
+}
