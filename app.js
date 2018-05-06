@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 // Routing
 app.get('/', (req, res) => {
-    res.send('Hello, Slck Bot! :-D for circleci-test');
+    res.send('Hello, Slck Bot! :-D');
 });
 
 http.createServer(app).listen(port, () => {
