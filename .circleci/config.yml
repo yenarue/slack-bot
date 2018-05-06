@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            git pull -r
+            git pull -r heroku
             git push heroku master
             heroku run rake db:migrate
             sleep 5
