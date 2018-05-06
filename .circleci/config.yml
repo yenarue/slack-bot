@@ -61,9 +61,9 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-#         2. just push
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git circleci-test
-#         1. use setup-heroku.sh
+
+####### // use setup-heroku.sh
 #            git push heroku circleci-test
 #            heroku run rake db:migrate
 #            sleep 5
