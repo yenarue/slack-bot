@@ -4,7 +4,7 @@ const getCurrentTime = (req, res) => {
     console.log('Getting started with Slack Developer Kit for Node.js');
     res.send('Getting started with Slack Developer Kit for Node.js');
 
-    const timeNotification = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
+    const timeNotification = new IncomingWebhook(process.env.TEST_SLACK_WEBHOOK_URL);
     const currentTime = new Date().toTimeString();
     timeNotification.send('현재시각 : ' + currentTime).then(res => {
         console.log("Notification sent");
@@ -16,8 +16,8 @@ const getCurrentTime = (req, res) => {
 const findMessageInChannel = (req, res) => {
     const msg = req.query.msg;
     const channel = req.query.channel;
-    const incomingwebhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
-    const webClient = new WebClient(process.env.SLACK_TOKEN);
+    const incomingwebhook = new IncomingWebhook(process.env.TEST_SLACK_WEBHOOK_URL);
+    const webClient = new WebClient(process.env.TEST_SLACK_TOKEN);
 
     console.log('Calling search.messages');
     webClient.search.messages({query: msg, sort: 'timestamp'})
