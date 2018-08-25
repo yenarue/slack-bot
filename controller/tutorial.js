@@ -1,16 +1,21 @@
-const {IncomingWebhook, WebClient} = require('@slack/client');
+const {WebClient} = require('@slack/client');
+const config = require('../config');
+const workspace = require('../config/workspace');
+
+const botApiToken = config.slackApiToken;
+const web = new WebClient(botApiToken);
 
 const getCurrentTime = (req, res) => {
-    console.log('Getting started with Slack Developer Kit for Node.js');
-    res.send('Getting started with Slack Developer Kit for Node.js');
-
-    const timeNotification = new IncomingWebhook(process.env.TEST_SLACK_WEBHOOK_URL);
     const currentTime = new Date().toTimeString();
-    timeNotification.send('현재시각 : ' + currentTime).then(res => {
-        console.log("Notification sent");
-    }).catch(err => {
-        console.error(err);
+
+    web.chat.postMessage({
+        channel: req.channelMap[workspace.defaultChannel],
+        text: '안녕하새오. 시계애오. \n 현재시각은 *' + currentTime + '* 이애오. 감사해오.',
+        as_user: false,
+        username: '시간알리미',
     });
+
+    res.sendStatus(200);
 };
 
 const findMessageInChannel = (req, res) => {

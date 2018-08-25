@@ -2,7 +2,7 @@ const config = require('./index');
 
 const workspace = {
     yeanrueDev: {
-        defaultChannel: 'general',
+        defaultChannel: 'bots',
         messages: {
             greeting: "님 어서오세요!\n"
             + "저는 아직 테스트 중인 *예나가 테스트하는 봇* 라고 해요.\n"
