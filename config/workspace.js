@@ -3,6 +3,7 @@ const config = require('./index');
 const workspace = {
     yeanrueDev: {
         defaultChannel: 'bots',
+        triggerName: '예나르봇',
         messages: {
             greeting: "님 어서오세요!\n"
             + "저는 아직 테스트 중인 *예나가 테스트하는 봇* 라고 해요.\n"
@@ -17,20 +18,23 @@ const workspace = {
     },
     forMakers: {
         defaultChannel: '_general',
+        triggerName: '포메스',
         messages: {
-            greeting: "님 어서오세요!\n"
-            + "저는 포메이커스 팀의 마스코트 *포메* 라고 해요.\n"
+            greeting: "님 어서오세요! 😍\n"
+            + "저는 포메이커스 팀의 마스코트 *포메스* 라고 해요.\n"
             + "저희 채널을 안내해 드릴게요!\n"
-            + "- #general : 일상적으로 사용하는 대화방이에요. 잡담을 나눠보아요!\n"
+            + "- #_general : 일상적으로 사용하는 대화방이에요. 잡담을 나눠보아요!\n"
+            + "- #calendar : 포메이커스의 일정 알림방 이에요. 구글 캘린더와 연동되어있어요.\n"
+            + "- #design : 디자인팀이 대화하는 곳이에요.\n"
             + "- #dev : 개발팀이 대화하는 곳이에요.\n"
             + "- #dev-build : 개발팀의 커밋 및 빌드 현황판 전용 채널이에요.\n"
-            + "- #informations : 유용한 정보, 기사 등 다양한 정보를 공유하는 채널이에요.\n"
-            + "- #calendar : 포메이커스의 일정 알림방 이에요. 구글 캘린더와 연동되어있어요.\n"
+            + "- #informations : 유용한 정보, 기사 등 업무에 관련된 다양한 정보를 공유하는 채널이에요.\n"
             + "이 외에도 더 많은 채널들이 있어요. 채널 목록을 참조해주세요!",
         },
     },
     funStudy: {
         defaultChannel: 'general',
+        triggerName: '열공봇',
         messages: {
             greeting: "님 어서오세요!\n"
             + "저는 FunStudy 슬랙방의 마스코트 *열공봇* 이라고 해요.\n"

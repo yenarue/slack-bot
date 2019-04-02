@@ -25,8 +25,22 @@ const getHomeLogic = (req, res) => {
 
         const text = event.text;
 
-        if (text.includes("천재")) {
-            rtm.sendMessage("감사", event.channel);
+        const groups = text.match(new RegExp(workspace.triggerName + "야?[^\w\d\s|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*", "gi"));
+        // console.log(groups, workspace.triggerName);
+
+        if (!groups || groups.length < 1) {
+            return;
+        }
+
+        if (groups[0] === text) {
+            rtm.sendMessage("네?", event.channel);
+            return;
+        }
+
+        if (text.includes("안녕")) {
+            rtm.sendMessage("안녕하새오! 포메스 애오! 왈왈! 🐶\n아직 조금 모자르지만 차캐오! 앞으로 더 잘할개오! 왈왈!", event.channel);
+        } else if (text.includes("천재")) {
+            rtm.sendMessage("감사합니다 😃", event.channel);
             web.chat.postMessage({
                 channel: event.channel,
                 text: '난 원래 천재인데?',
@@ -35,8 +49,8 @@ const getHomeLogic = (req, res) => {
                 username: '건방진 속내',
             })
         } else if (text.includes("바보")) {
-            rtm.sendMessage("반사", event.channel);
-        } else if (text === "테스트 입장") {
+            rtm.sendMessage("반사🖐", event.channel);
+        } else if (text.includes("테스트 입장")) {
             web.users.info({token: botApiToken, user: event.user})
                 .then(result => Promise.resolve(result.user))
                 .then(user => {
