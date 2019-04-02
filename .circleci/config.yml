@@ -100,6 +100,7 @@ workflows:
       - formakers-deploy:
           requires:
             - build
+            - deploy
           filters:
             branches:
               only: master
