@@ -57,11 +57,11 @@ jobs:
       - checkout
       - run:
           name: Setup Heroku
-          command: bash .circleci/setup-heroku.sh
+          command: bash .circleci/setup-heroku.sh $HEROKU_APP
       - run:
           name: Deploy to Heroku
           command: |
-            git push heroku master
+            git push heroku master -f
             heroku run rake db:migrate
             sleep 5
             heroku restart
@@ -71,19 +71,19 @@ jobs:
       enable: true
     working_directory: ~/slack-bot
     environment:
-    - HEROKU_APP : formakers-slack-bot
+      - HEROKU_APP : formakers-slack-bot
     steps:
-    - checkout
-    - run:
-        name: Setup Heroku
-        command: bash .circleci/setup-heroku.sh
-    - run:
-        name: Deploy to Heroku
-        command: |
-          git push heroku master
-          heroku run rake db:migrate
-          sleep 5
-          heroku restart
+      - checkout
+      - run:
+          name: Setup Heroku
+          command: bash .circleci/setup-heroku.sh $HEROKU_APP
+      - run:
+          name: Deploy to Heroku
+          command: |
+            git push heroku master -f
+            heroku run rake db:migrate
+            sleep 5
+            heroku restart
 
 
 workflows:
