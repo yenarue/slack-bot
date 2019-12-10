@@ -1,4 +1,4 @@
-const {WebClient} = require('@slack/client');
+const {WebClient} = require('@slack/web-api');
 const config = require('../config');
 const workspace = require('../config/workspace');
 

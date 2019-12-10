@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/yenarue/slack-bot#readme",
   "dependencies": {
-    "@slack/client": "^4.3.1",
+    "@slack/rtm-api": "^5.0.3",
+    "@slack/web-api": "^5.6.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "morgan": "^1.9.0"

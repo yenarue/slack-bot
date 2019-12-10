@@ -1,6 +1,7 @@
-const {RTMClient, WebClient} = require('@slack/client');
-const CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
-const RTM_EVENTS = require('@slack/client').RTM_EVENTS;
+const {RTMClient} = require('@slack/rtm-api');
+const {WebClient} = require('@slack/web-api');
+// const CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
+// const RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 const config = require('../config');
 const workspace = require('../config/workspace');
 
