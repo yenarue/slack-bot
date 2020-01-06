@@ -60,7 +60,20 @@ rtm.on('message', event => {
 });
 
 rtm.on('team_join', event => {
+    console.log(event);
     rtm.sendMessage(event.user.profile.display_name + workspace.messages.greeting, workspace.defaultChannel);
+});
+
+rtm.on('member_joined_channel', event => {
+    console.log(event);
+
+    if (!workspace.greetingChannel) {
+        return;
+    }
+
+    if (event.channel === workspace.greetingChannel) {
+        rtm.sendMessage(workspace.messages.welcome, event.channel);
+    }
 });
 
 rtm.on('pin_added', event => {
