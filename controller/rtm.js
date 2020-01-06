@@ -15,6 +15,10 @@ rtm.on('authenticated', rtmStartData => {
 });
 
 rtm.on('message', event => {
+    if (!event.user) {
+        return;
+    }
+
     // Skip messages that are from a bot or my own user ID
     if ((event.subtype && event.subtype === 'bot_message') ||
         (!event.subtype && event.user === rtm.activeUserId)) {
